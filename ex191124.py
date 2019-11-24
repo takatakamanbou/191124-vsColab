@@ -134,7 +134,7 @@ fnModel = pathGDrive + '/ex191124-params.pickle'
 #
 torch.manual_seed(0)
 #net = network.MLP(XT.shape[1], 1000, 1000, K)
-net = network.CNN(XL.shape[1:], 8, 8, 1000, K)
+net = network.CNN(XL.shape[1:], 16, 32, 1000, K)
 with open(fnModel, mode = 'rb') as f:
     net.load_state_dict(torch.load(f))
     model = net.to(device)
